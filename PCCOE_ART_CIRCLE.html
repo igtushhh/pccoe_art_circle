@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCCoE Art Circle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        nav.navbar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav.navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav.navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .section-wrapper {
+            max-height: 80vh; 
+            overflow-y: auto;  
+            padding: 20px;     
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            display: none; 
+        }
+        section.active {
+            display: block; 
+        }
+
+        .overlay-text {
+            position: static;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #000000;
+            font-size: 24px;
+            z-index: 1;  
+        }
+        
+        .overlay-text h1{
+           font-size: 2cm;
+        }
+        .content {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .featured-artist {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .featured-artist h4 {
+            margin: 0 0 5px;
+        }
+        
+        .featured-artist p {
+            margin: 0;
+        }
+        
+        h4{
+            text-align: center;
+            background-color: navy;
+            -webkit-text-fill-color: #ddd;
+            margin: auto;
+        }
+        h3{
+            text-align: center;
+        }
+        .video-background {
+            position: relative; 
+          }
+
+          #gallery {
+            text-align: center;
+            margin: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        input:focus {
+            border: 2px solid #ff4081;
+            outline: none;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; 
+        }
+        
+        .gallery img {
+            width: 200px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.2s; 
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05); 
+        }
+        
+        .gallery-title h2 {
+            font-size: 2.5em; 
+            color: #fff; 
+            background: linear-gradient(45deg, #ff6f61, #debb5a); 
+            padding: 10px 20px; 
+            border-radius: 10px; 
+            display: inline-block; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: background 0.3s;
+        }
+        
+        .gallery-title h2:hover {
+            background: linear-gradient(45deg, #debb5a, #ff6f61); 
+        }
+
+    </style>
+</head>
+<body>
+    <h4>PCET's Pimpri Chinchwad College of Engineering</h4>
+
+    <nav class="navbar">
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('gallery')">Gallery</a>
+        <a href="#" onclick="showSection('join')">Join Us</a>
+    </nav>
+
+    <div class="section-wrapper">
+        <section id="home" class="active">
+            <div class="content"></div>
+              <div class="overlay-text">
+                <h1>Welcome to the PCCoE's Art Circle
+                <img src="D:\ArtCircle\Logos\signature (1).png" height="130px" width="150px">
+                </h1>
+                <div class="video-background">
+                    <video height="80%" width="80%" autoplay muted loop>
+                        <source src="C:\Users\TUSHAR\OneDrive\Desktop\WEBPAGE\INDUCTION.mov">
+                    </video>
+                  </div>
+                <h2>About Our Circle</h2>
+                <p>The PCCoE Art Circle is a vibrant community dedicated to fostering creativity among students. We provide a platform for aspiring artists to express themselves and develop their skills through various art forms.</p>
+
+                <h3>Recent Activities</h3>
+                <p>We have recently organized a Freshers 2024 for the new batch and Flowers Rangoli competition for all the deartments of PCCoE. Join us in our upcoming events to explore more artistic avenues!</p>
+
+                <div class="container">
+                    <h3>Featured Artist of the Month</h3>
+                    <div class="featured-artist">
+                        <h4>Kedar Kulsawange</h4>
+                        <p>Kedar is a talented actor known for his expressive use of looks and body language. His recent act in the Sakal In event got him the Golden Boy trophy and earned him love from across the college.</p>
+                    </div>
+                    <div class="featured-artist">
+                        <h4>Swaroop Thakre</h4>
+                        <p>Swaroop is a skilled photographer whose work captures the beauty of everyday life. He recently won a competition with his stunning landscape photographs.</p>
+                    </div>
+                    <div class="featured-artist">
+                        <h4>Ashutosh Takpire</h4>
+                        <p>Winner of the 2010 reality show "Sahyadri Vahini Dam Dama Dam," finalist in Season 1 of "Maharashtra's Assal Dancer (MAD)" on Colors Marathi, recipient of the prize for Physical Theatre at "Firodiya Karandak 2023," and winner of the DFL Solo Dance competition.</p>
+                    </div>
+                    <div class="featured-artist">
+                        <h4>Shantanu Ingole</h4>
+                        <p>Shantanu achieved a remarkable milestone at Vinodottam Karandak by winning first prize for his very first story. His ability to craft engaging narratives and rich characters has set him apart as a promising writer.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>The College Art Circle is a community where students explore and express their creativity through various forms of art. It was founded with the goal of fostering a collaborative and supportive environment for artists of all kinds, including painters, photographers, sculptors, and digital designers.</p>
+            <p>Our mission is to encourage artistic development among students by organizing workshops, exhibitions, and events that provide opportunities for students to learn, grow, and showcase their work. Through collaboration with other art organizations, we aim to expand the horizons of our members.</p>
+                <div class="col-md-offset-3">					
+                <h2 class="heading_h1">Art Circle Faculty Co-Ordinators</h2>
+                <div class="border1"></div>
+                <div class="border2"></div><br>
+            
+                <table class="table table-bordered table-responsive para1">					
+                    <tbody>
+                        <tr class="table-row">
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Sr. No.</strong>
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    <strong>Name of Faculty</strong>
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Department</strong>
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Mobile No.</strong>
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Email ID.</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    1
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    <strong>Dr. M. R. Nukulwar (Overall In-Charge)</strong>
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Mechanical</strong>
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>7263026572</strong>
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    <strong>masnaji.nukulwar@pccoepune.org</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    2
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mrs. P.V. Kalokhe
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Civil
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    7410031818
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    pratima.kalokhe@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    3
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mrs. M.A . 	Suryavanshi
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Computer
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    8329336695
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    madhuri.suryavanshi@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    4
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mrs. Suvarna Bhatsangave
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    CSE(AI ML)
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    7039066266
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    survana.bhatsangave@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    5
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mrs. A.V. Bhamare
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    ENTC
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    9527137558
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    archana. bhamare@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    6
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mrs. Shweta Devdas
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    IT
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    8830905693
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    shweta.devdas@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    7
+                                </p>
+                            </td>
+                            <td width="180" nowrap="" valign="top">
+                                <p>
+                                    Mr. Anandkumar Birajdar
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Comp.  (Regional)
+                                </p>
+                            </td>
+                            <td width="94" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    9960007589
+                                </p>
+                            </td>
+                            <td width="244" nowrap="" valign="top">
+                                <p>
+                                    anand.birajdar@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" valign="top">
+                                <p style="text-align: center;">
+                                    8
+                                </p>
+                            </td>
+                            <td width="180" valign="top">
+                                <p>
+                                    Mr. Bali Khurana
+                                </p>
+                            </td>
+                            <td width="132" valign="top">
+                                <p style="text-align: center;">
+                                    MCA
+                                </p>
+                            </td>
+                            <td width="94" valign="top">
+                                <p style="text-align: center;">
+                                    9834877544
+                                </p>
+                            </td>
+                            <td width="244" valign="top">
+                                <p>
+                                    bali.khurana@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" valign="top">
+                                <p style="text-align: center;">
+                                    9
+                                </p>
+                            </td>
+                            <td width="180" valign="top">
+                                <p>
+                                    Mrs. Falguni Bhavsar
+                                </p>
+                            </td>
+                            <td width="132" valign="top">
+                                <p style="text-align: center;">
+                                    AS&amp;H
+                                </p>
+                            </td>
+                            <td width="94" valign="top">
+                                <p style="text-align: center;">
+                                    8263852251
+                                </p>
+                            </td>
+                            <td width="244" valign="top">
+                                <p>
+                                    falguni.bhavsar@pccoepune.org
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2 class="heading_h1">College Level Students Coordinator A.Y. 2024-25</h2>
+                <div class="border1"></div>
+                <div class="border2"></div><br>
+                
+                <table class="table table-bordered table-responsive para1">					
+                    <tbody>
+                        <tr class="table-row">					
+                            <td width="95" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Sr. No.</strong>
+                                </p>
+                            </td>
+                            <td width="252" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Designation</strong>
+                                </p>
+                            </td>
+                            <td width="164" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Name</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="95" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    1
+                                </p>
+                            </td>
+                            <td width="252" nowrap="" valign="top">
+                                <p>
+                                    Co-Ordinator
+                                </p>
+                            </td>
+                            <td width="164" nowrap="" valign="top">
+                                <p>
+                                    Krishna Kalaspurkar
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="95" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    2
+                                </p>
+                            </td>
+                            <td width="252" nowrap="" valign="top">
+                                <p>
+                                    Secretary
+                                </p>
+                            </td>
+                            <td width="164" nowrap="" valign="top">
+                                <p>
+                                    Shrushti Sarode
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="95" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    3
+                                </p>
+                            </td>
+                            <td width="252" nowrap="" valign="top">
+                                <p>
+                                    Vipra (Student Representative)
+                                </p>
+                            </td>
+                            <td width="164" nowrap="" valign="top">
+                                <p>
+                                    Sayali Vanjari
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="95" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    4
+                                </p>
+                            </td>
+                            <td width="252" nowrap="" valign="top">
+                                <p>
+                                    Treasurer
+                                </p>
+                            </td>
+                            <td width="164" nowrap="" valign="top">
+                                <p>
+                                    Soham Brahmankar
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <h2 class="heading_h1">Clubs Formed as Per Students' Interest A.Y. 2024-25</h2>
+                <div class="border1"></div>
+                <div class="border2"></div><br>
+                
+                <table class="table table-bordered table-responsive para1">					
+                    <tbody>
+                        <tr class="table-row">
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Sr. No.</strong>
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Clubs</strong>
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Heads</strong>
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    <strong>Co-head</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    1
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Theatre
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Swarup Kusalkar
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Manasi Dixit
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    2
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Dance
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Praful Gunjal
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Samruddhi Nimbalkar, Aarya Deshpande
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    3
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Art and Painting
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Harsh Gumdel
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Shreya Pawar
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    4
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Music/Singing
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Abhiboo Anand
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Ajinkya Chaudhari
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    5
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Writing/Poetry
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Varad Digraskar
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Anushka Bhoite
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    6
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Short Film
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Shantanu Ingole
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Atharva Bhole
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    7
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Rangoli
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Palvi Pantawane
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Preksha Gangwal
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    8
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Anchoring
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Ishani Soundankar
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Advait Nathe
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    9
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Photography
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Swaroop Thakre
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Vaibhav Dandge
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="47" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    10
+                                </p>
+                            </td>
+                            <td width="132" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Digital Marketing and Social media
+                                </p>
+                            </td>
+                            <td width="170" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Shrushti Sarode
+                                </p>
+                            </td>
+                            <td width="312" nowrap="" valign="top">
+                                <p style="text-align: center;">
+                                    Vaibhav Dandge,Saniya Khade
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+
+        <section id="gallery">
+            <div class="gallery-title">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery">
+                <img src="gallery1.webp" alt="Art 1">
+                <img src="gallery2.webp" alt="Art 2">
+                <img src="gallery3.jpg" alt="Art 3">
+                <img src="gallery4.jpg" alt="Art 4">
+                <img src="gallery5.jpg" alt="Art 5">
+                <img src="gallery6.jpg" alt="Art 6">
+                <img src="gallery7.jpg" alt="Art 7">
+                <img src="gallery8.jpg" alt="Art 8">
+                <img src="gallery9.jpg" alt="Art 9">
+                <img src="gallery10.jpg" alt="Art 10">
+                <img src="gallery11.jpg" alt="Art 11">
+                <img src="gallery12.jpg" alt="Art 12">
+                <img src="gallery13.jpg" alt="Art 13">
+                <img src="gallery14.jpg" alt="Art 14">
+                <img src="gallery15.jpg" alt="Art 15">
+                <img src="gallery16.jpg" alt="Art 16">
+                <img src="gallery17.jpg" alt="Art 17">
+                <img src="gallery18.jpg" alt="Art 18">
+                <img src="gallery19.jpg" alt="Art 19">
+                <img src="gallery20.jpg" alt="Art 20">
+                <img src="gallery21.jpg" alt="Art 21">
+                <img src="gallery22.jpg" alt="Art 22">
+                <img src="gallery23.jpg" alt="Art 23">
+                <img src="gallery24.jpg" alt="Art 24">
+                <img src="gallery25.jpg" alt="Art 25">
+                <img src="gallery26.jpg" alt="Art 26">
+                <img src="gallery27.jpg" alt="Art 27">
+                <img src="gallery28.jpg" alt="Art 28">
+                <img src="gallery29.jpg" alt="Art 29">
+                <img src="gallery30.jpg" alt="Art 30">
+                <img src="gallery31.jpg" alt="Art 31">
+                <img src="gallery32.jpg" alt="Art 32">
+                <img src="gallery33.jpg" alt="Art 33">
+                <img src="gallery34.jpg" alt="Art 34">
+                <img src="gallery35.jpg" alt="Art 35">
+                <img src="gallery36.jpg" alt="Art 36">
+                <img src="gallery37.jpg" alt="Art 37">
+                <img src="gallery38.jpg" alt="Art 38">
+                <img src="gallery39.jpg" alt="Art 39">
+                <img src="gallery40.jpg" alt="Art 40">
+                <img src="gallery41.jpg" alt="Art 41">
+                <img src="gallery42.jpg" alt="Art 42">
+                <img src="gallery43.jpg" alt="Art 43">
+                <img src="gallery44.jpg" alt="Art 44">
+                <img src="gallery45.jpg" alt="Art 45">
+            </div>
+        </section>
+         
+        <section id="join" style="display: flex; align-items: flex-start; padding: 50px; background: linear-gradient(135deg, #ff77a9, #6a82fb); color: #fff; position: relative;">
+            <div style="flex: 1; padding: 20px;">
+                <h2 style="font-family: 'ArtisticFont', sans-serif; font-size: 2.5em; margin-bottom: 20px;">Memories</h2>
+                <p style="font-size: 1.2em; line-height: 1.5;">Sharing our artistic journey with you all!! We cherish every story and image. Let’s create beautiful memories together.</p>
+                
+
+            </div>
+            
+            <form action="submit-join.php" method="POST" style="flex: 1; background: rgba(0, 0, 0, 0.7); padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); transition: transform 0.3s; margin-left: 20px;">
+                <h2 style="font-size: 2em; margin-bottom: 20px;">Join Our Creative Community</h2>
+                
+                <label for="name" style="display: block; font-size: 1.2em; margin: 10px 0;">Name</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <label for="email" style="display: block; font-size: 1.2em; margin: 10px 0;">Email</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <label for="prn" style="display: block; font-size: 1.2em; margin: 10px 0;">PRN Number</label>
+                <input type="text" id="prn" name="prn" style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <label for="year_division" style="display: block; font-size: 1.2em; margin: 10px 0;">Year & Division</label>
+                <input type="text" id="year_division" name="year_division" style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <label for="contact" style="display: block; font-size: 1.2em; margin: 10px 0;">Contact Number</label>
+                <input type="text" id="contact" name="contact" style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <label for="interest" style="display: block; font-size: 1.2em; margin: 10px 0;">Arts Interest</label>
+                <input type="text" id="interest" name="interest" style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-bottom: 20px; transition: border 0.3s;">
+        
+                <button type="submit" style="background-color: #ff4081; color: #fff; padding: 15px 30px; border: none; border-radius: 25px; cursor: pointer; font-size: 1.5em; transition: transform 0.3s;">
+                    Join Now
+                </button>
+            </form>
+        
+        </section>        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PCCoE Art Circle. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
